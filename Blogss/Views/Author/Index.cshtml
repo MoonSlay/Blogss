@@ -1,0 +1,45 @@
+﻿@model List<Author>
+
+<main>
+
+    @{
+        if(ViewBag.SuccessMessage != null)
+        {
+
+        }
+        if(ViewBag.ErrorMessage != null)
+        {
+            
+        }
+    }
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">Author id</th>
+                <th scope="col">Name</th>
+                <th scope="col">Email</th>
+                <th scope="col">Date Created</th>
+                <th scope="col">Options</th>
+            </tr>
+            </thead>
+            <tbody>
+            @{
+                foreach(var author in Model)
+                {
+                    <tr>
+                        <th scope="row">@author.Id</th>
+                        <td scope="row">@author.Name</td>
+                        <td scope="row">@author.Email</td>
+                        <td scope="row">@author.DateCreated</td>
+                        <td>
+                            <div>
+                                <button class="btn btn-info">Details</button>
+                                <button class="btn btn-info">Delelte</button>
+                            </div>
+                        </td>
+                    </tr>
+                }
+            }
+            </tbody>
+    </table>
+</main>
